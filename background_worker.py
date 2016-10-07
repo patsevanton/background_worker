@@ -1,9 +1,6 @@
 #!/usr/bin/env python2
 # -*- encoding: utf-8 -*-
 
-#!/usr/bin/env python2
-# -*- encoding: utf-8 -*-
-
 import datetime
 import time
 import threading
