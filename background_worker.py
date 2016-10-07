@@ -14,8 +14,8 @@ def background_worker(second):
                 t.start()
                 return t
             func_hl = Thread(target=TaskManager, args=args, kwargs=kwargs)
-            #func_hl.daemon = True
-            func_hl.start()
+            func_hl.daemon = True
+            func_hl.run()
             return func_hl
         return wrapper
     return my_decorator
