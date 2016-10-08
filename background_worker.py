@@ -25,7 +25,6 @@ class background_worker(object):
             func_hl = Thread(name='MyName',target=task_manager, args=args, kwargs=kwargs)
             func_hl.daemon = True
             func_hl.run()
-            self.daemon = True
             return func_hl
 
         return decorated
@@ -35,5 +34,8 @@ class background_worker(object):
 def some_job():
     print 'job', now()
 
+# some_job().getName() == 'MyName' dont get Passed
+# But ome_job().getName() printed MyName
 
-some_job()
+#def test_identified_thread_object():
+#    assert some_job().getName() == 'MyName'
