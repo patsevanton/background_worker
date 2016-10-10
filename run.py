@@ -10,8 +10,8 @@ now = datetime.now
 
 @background_worker(1)
 def some_job(*args, **kwargs):
-    print 'running into separated thread', now()
-    print("args is " % args, "kwargs is %s" % kwargs)
+    print("running into separated thread", now())
+    print("args is %s, kwargs is %s" % (args, kwargs))
 
 
 
