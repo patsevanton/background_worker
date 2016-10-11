@@ -4,14 +4,6 @@ from threading import Thread
 from background_worker import BackgroundWorker as background_worker
 
 
-def test__is_returned_a_thread():
-    @background_worker(2)
-    def t1(args, **kwargs):
-        return
-    assert isinstance(t1(), Thread)
-
-
-
 def test__thread_works_in_background():
     from time import sleep
     times = 10
@@ -25,7 +17,14 @@ def test__thread_works_in_background():
     _listy = []
     t1(_listx, y=_listy)
     sleep(times)
-    assert len(_listx) == times-1
-    assert len(_listy) == times-1
+    assert abs(len(_listx) - times) < 2
+    assert abs(len(_listy) - times) < 2
+
+
+def test__is_returned_a_thread():
+    @background_worker(2)
+    def t1(args, **kwargs):
+        return
+    assert isinstance(t1(), Thread)
 
 
