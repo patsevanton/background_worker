@@ -8,7 +8,7 @@ from background_worker import BackgroundWorker as background_worker
 now = datetime.now
 
 
-@background_worker(1)
+@background_worker(2)
 def some_job(*args, **kwargs):
     print("running into separated thread", now())
     print("args is %s, kwargs is %s" % (args, kwargs))
