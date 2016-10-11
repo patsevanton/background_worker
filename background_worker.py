@@ -22,7 +22,7 @@ class BackgroundWorker(object):
             def task_manager(*args, **kwargs):
                 while True:
                     sleep(self.arg)
-                    func(*args, **kwargs)
+                    func(args, **kwargs)
             func_hl = Thread(name='MyName', target=task_manager, args=args, kwargs=kwargs)
             func_hl.daemon = True
             func_hl.start()

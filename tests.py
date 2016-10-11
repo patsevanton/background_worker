@@ -14,7 +14,7 @@ def test__is_returned_a_thread():
 
 def test__thread_works_in_background():
     from time import sleep
-    times = 1
+    times = 5
 
     @background_worker(1)
     def t1(x, **kwargs):
